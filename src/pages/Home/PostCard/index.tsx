@@ -20,12 +20,13 @@ export function PostCard({ post }: IPostCard) {
       <header>
         <h1>{title}</h1>
         <span>{formattedDate}</span>
+        <div className="label">
+          {labels.map((label) => {
+            return <Label color={`#${label.color}`}>{label.name}</Label>;
+          })}
+        </div>
       </header>
-      <div className="label">
-        {labels.map((label) => {
-          return <Label color={`#${label.color}`}>{label.name}</Label>;
-        })}
-      </div>
+
       <main>
         <p>{formatText(body, 80)}</p>
       </main>

@@ -21,8 +21,9 @@ export const PostCardContainer = styled(NavLink)`
   cursor: pointer;
   header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    /* gap: 0.7rem; */
     h1 {
       font-weight: 700;
       font-size: 1.125rem;
@@ -35,6 +36,10 @@ export const PostCardContainer = styled(NavLink)`
       font-size: 0.875rem;
       line-height: 160%;
       color: ${(props) => props.theme["base-span"]};
+    }
+
+    div {
+      margin-top: 1rem;
     }
   }
 
@@ -57,7 +62,7 @@ interface LabelProps {
   color: string;
 }
 export const Label = styled.span<LabelProps>`
-  color: ${(props) => props.color};
+  color: ${(props) => props.color} !important;
   border: 2px solid ${(props) => props.color};
   padding: 5px;
   border-radius: 1rem;
