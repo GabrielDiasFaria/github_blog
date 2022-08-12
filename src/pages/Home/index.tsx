@@ -9,11 +9,17 @@ import {
   SearchSection,
 } from "./styles";
 
+export interface ILabel {
+  color: string;
+  name: string;
+}
+
 export interface IPost {
   title: string;
   body: string;
   created_at: string;
   number: string;
+  labels: ILabel[];
 }
 
 export function Home() {

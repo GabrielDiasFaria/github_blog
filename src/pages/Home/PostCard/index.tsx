@@ -3,14 +3,14 @@ import { enUS } from "date-fns/locale";
 import React from "react";
 import { IPost } from "..";
 import { formatText } from "../../../utils/formatText";
-import { PostCardContainer } from "./styles";
+import { Label, PostCardContainer } from "./styles";
 
 interface IPostCard {
   post: IPost;
 }
 
 export function PostCard({ post }: IPostCard) {
-  const { created_at, body, title, number } = post;
+  const { created_at, body, title, number, labels } = post;
   const formattedDate = formatDistanceToNow(new Date(created_at), {
     locale: enUS,
     addSuffix: true,
@@ -21,6 +21,11 @@ export function PostCard({ post }: IPostCard) {
         <h1>{title}</h1>
         <span>{formattedDate}</span>
       </header>
+      <div className="label">
+        {labels.map((label) => {
+          return <Label color={`#${label.color}`}>{label.name}</Label>;
+        })}
+      </div>
       <main>
         <p>{formatText(body, 80)}</p>
       </main>
