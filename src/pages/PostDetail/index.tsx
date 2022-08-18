@@ -85,7 +85,7 @@ export function PostDetail() {
       </PostDetailCard>
       <PostDetailContent>
         <ReactMarkdown
-          children={post.body}
+          children={`${post.body}`}
           remarkPlugins={[remarkGfm]}
           components={{
             code({ node, inline, className, children, ...props }) {
@@ -93,6 +93,7 @@ export function PostDetail() {
               return !inline && match ? (
                 <SyntaxHighlighter
                   children={String(children).replace(/\n$/, "")}
+                  /*@ts-ignore*/
                   style={dracula}
                   language={match[1]}
                   PreTag="div"

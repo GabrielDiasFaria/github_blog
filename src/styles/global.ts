@@ -38,10 +38,10 @@ export const GlobalStyle = createGlobalStyle`
   background: ${(props) => props.theme.blue};
 }
 
-pre{
+/* pre{
   background-color: #222222;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 1rem;
   padding: 1rem;
-}
+} */
 `;
